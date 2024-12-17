@@ -1,0 +1,209 @@
+// Variables globales
+$btn-font-size: 1.1rem;
+$btn-padding: 0.6rem 2rem;
+$btn-border-radius: 10px;
+$btn-transition: all 400ms;
+$btn-bg-color: transparent;
+$btn-fill-color: #ffc506;
+$btn-hover-color: #1e1e2b;
+
+// Estilos base para botones
+button {
+    font-size: $btn-font-size;
+    padding: $btn-padding;
+    border-radius: $btn-border-radius;
+    border: none;
+    transition: $btn-transition;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    color: currentColor;
+    background-color: $btn-bg-color;
+
+    &.large {
+        padding: 0.8rem 3.5rem;
+    }
+
+    &.fill-up {
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background-color: $btn-fill-color;
+            transition: 0.5s ease;
+        }
+
+        &:hover {
+            color: $btn-hover-color;
+            transition-delay: 0.5s;
+
+            &::before {
+                width: 100%;
+            }
+
+            &::after {
+                height: 100%;
+                transition-delay: 0.4s;
+                color: aliceblue;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0;
+            width: 100%;
+            background-color: $btn-fill-color;
+            transition: 0.4s ease;
+            z-index: -1;
+        }
+    }
+
+    &.fill-right {
+        height: 3rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
+            transition: all 0.475s;
+        }
+
+        &:hover::before {
+            transform: scaleX(1);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &.move-up {
+        transition: all 0.25s ease-out;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+
+    &.shake {
+        &:hover {
+            animation: sh0 0.5s ease-in-out both;
+        }
+    }
+
+    &.shadow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+        &:hover {
+
+            &::before,
+            &::after {
+                opacity: 0.15;
+                transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+            }
+
+            &::before {
+                transform: translate3d(50%, 0, 0) scale(0.9);
+            }
+
+            &::after {
+                transform: translate(50%, 0) scale(1.1);
+            }
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #000;
+            opacity: 0;
+            transform: translate(100%, -25%) translate3d(0, 0, 0);
+            z-index: -1;
+        }
+    }
+
+    &.click-down,
+    &.click-up {
+        transition: all 0.1s linear;
+
+        &.click-down:active {
+            transform: scale(0.95);
+        }
+
+        &.click-up:active {
+            transform: scale(1.05);
+        }
+    }
+
+    &.outlet {
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            border: 0.15em solid currentColor;
+            transition: all 0.3s 0.08s linear;
+            top: 50%;
+            left: 50%;
+            width: 9em;
+            height: 3em;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover::before {
+            width: 9.9em;
+            height: 3.7em;
+        }
+
+    }
+}
+
+// Animación de sacudida
+@keyframes sh0 {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(7deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-7deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}

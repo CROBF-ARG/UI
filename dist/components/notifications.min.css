@@ -1,0 +1,1 @@
+.notification{border-radius:5px;color:#383838;background-color:#d8d8d8;display:inline-block;padding:1rem;font-size:1.2rem;font-weight:thin;font-family:serif;width:30vw;text-wrap:balance}.notification.success{background-color:#28a745;color:#e0e0e0}.notification.error{background-color:#dc3545;color:#e0e0e0}.notification.warning{background-color:#ffc107;color:#e0e0e0}

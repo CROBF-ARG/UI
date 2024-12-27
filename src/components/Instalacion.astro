@@ -1,0 +1,33 @@
+---
+const link = Astro.props;
+---
+
+<h5>Instalación Usando CDN</h5>
+<p>
+    Para usar lo siguiente, simplemente agrega el siguiente código en tu html:
+</p>
+<div class="code-container">
+    <code class="language-html">
+        {
+            `<link
+                rel="stylesheet"
+                href="${Astro.props.link}"
+            />`
+        }
+    </code>
+</div>
+
+<style>
+    p {
+        text-align: center;
+        max-width: 600px;
+        text-wrap: balance;
+    }
+    h5 {
+        margin: 20px 0px;
+    }
+    .code-container code {
+        display: block;
+        width: min-content;
+    }
+</style>

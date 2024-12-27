@@ -1,7 +1,9 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import Instalacion from "../components/Instalacion.astro";
 import SideBar from "../components/SideBar.astro";
 import Title from "../components/Title.astro";
+const link = Astro.props;
 ---
 
 <!doctype html>
@@ -20,23 +22,28 @@ import Title from "../components/Title.astro";
         <SideBar />
         <main>
             <Title />
-            <slot />
+            <Instalacion link=`${Astro.props.link}` />
+            <div class="container">
+                <h4>{Astro.props.title}</h4>
+                <slot />
+            </div>
         </main>
-    </body><style>
-        body {
-            margin: 0;
-            background-color: #14161a;
-            color: white;
-            display: flex;
-        }
-        main {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    </style>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-    ></script>
+        <style>
+            body {
+                margin: 0;
+                background-color: #14161a;
+                color: white;
+                display: flex;
+            }
+            main {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+        ></script>
+    </body>
 </html>

@@ -31,12 +31,15 @@
     </button>
     <div class="sidebar card">
         <div class="sidebar__content">
-            <span>Empezar Aquí</span>
+            <span>Elementos</span>
             <div class="card__container">
-                <p class="element">General</p>
-                <p class="element">Botones</p>
-                <p class="element">Tarjetas</p>
-                <p class="element active">Formularios</p>
+                <a href="/buttons"><p class="element">Botones</p></a>
+                <a href="/titles"><p class="element">Títulos</p></a>
+            </div>
+            <span>Componentes</span>
+            <div class="card__container">
+                <a href="/cards"><p class="element">Próximamente</p></a>
+                <a href="/forms"><p class="element">Próximamente</p></a>
             </div>
         </div>
     </div>
@@ -70,7 +73,7 @@
     }
 
     .sidebar {
-        height: 100vh;
+        height: 100%;
         border-radius: 0 10px 10px 0;
         color: white;
         font-weight: 600;
@@ -78,9 +81,6 @@
         padding: 15px;
         width: 250px;
         background-color: #1c1e22;
-        left: 0;
-        top: 0;
-        bottom: 0;
         transform: translateX(0);
         transition: transform 0.3s ease;
     }
@@ -99,6 +99,9 @@
 
     .element:hover:not(.active) {
         color: #3775bb;
+    }
+    a {
+        text-decoration: none;
     }
 
     @media (max-width: 768px) {

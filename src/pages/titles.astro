@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="Títulos"
+    link="https://crobf-arg.github.io/UI/dist/milig.min.css">
+    <link
+        rel="stylesheet"
+        href="https://crobf-arg.github.io/UI/dist/milig.min.css"
+    />
+    <p>Estos son los títulos disponibles en tu biblioteca:</p>
+    <div class="titles">
+        <h1>Heading 1</h1>
+        <div class="code-container">
+            <code class="language-html">
+                {`<h1>Heading 1</h1>`}
+            </code>
+        </div>
+        <h2>Heading 2</h2>
+        <div class="code-container">
+            <code class="language-html">
+                {`<h2>Heading 2</h2>`}
+            </code>
+        </div>
+        <h3>Heading 3</h3>
+        <div class="code-container">
+            <code class="language-html">
+                {`<h3>Heading 3</h3>`}
+            </code>
+        </div>
+        <h4>Heading 4</h4>
+        <div class="code-container">
+            <code class="language-html">
+                {`<h4>Heading 4</h4>`}
+            </code>
+        </div>
+        <h5>Heading 5</h5>
+        <div class="code-container">
+            <code class="language-html">
+                {`<h5>Heading 5</h5>`}
+            </code>
+        </div>
+        <h6>Heading 6</h6>
+        <div class="code-container">
+            <code class="language-html">
+                {`<h6>Heading 6</h6>`}
+            </code>
+        </div>
+    </div>
+    <style>
+        .code-container {
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+        .code-container code {
+            padding: 10px;
+            display: block;
+            max-width: fit-content;
+        }
+    </style>
+</Layout>

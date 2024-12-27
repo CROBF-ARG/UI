@@ -1,18 +1,28 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
 ---
 
-<Layout>
-    <section class="hero">
-        <div class="hero-body">
-            <h1 class="hero-title">
-                Bienvenido a la Biblioteca de Componentes
-            </h1>
-            <p class="hero-subtitle">
-                Explora una colección de componentes modernos, funcionales y
-                minimalistas.
-            </p>
-            <a href="/buttons" class="btn">Empezar</a>
-        </div>
-    </section>
-</Layout>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <BaseHead />
+        <title>{Astro.props.title || "UI - CROBF"}</title>
+    </head>
+    <body>
+        <main>
+            <Header />
+        </main>
+    </body><style>
+        body {
+            background-color: #14161a;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+        main {
+            max-width: 1000px;
+        }
+    </style>
+</html>

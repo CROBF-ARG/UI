@@ -1,0 +1,142 @@
+<div class="sidebar-container">
+    <button id="menu-toggle" aria-label="Toggle menú" class="hamburger">
+        <svg
+            id="menu-icon-open"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg
+            id="menu-icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon hidden">
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+            ></path>
+        </svg>
+    </button>
+    <div class="sidebar card">
+        <div class="sidebar__content">
+            <span>Empezar Aquí</span>
+            <div class="card__container">
+                <p class="element">General</p>
+                <p class="element">Botones</p>
+                <p class="element">Tarjetas</p>
+                <p class="element active">Formularios</p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .sidebar-container {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .hamburger {
+        display: none;
+        position: absolute;
+        top: 15px;
+        font-size: 1.5em;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        stroke: white;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .sidebar {
+        height: 100vh;
+        border-radius: 0 10px 10px 0;
+        color: white;
+        font-weight: 600;
+        font-size: 1.2em;
+        padding: 15px;
+        width: 250px;
+        background-color: #1c1e22;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .element {
+        color: grey;
+        font-size: 0.8em;
+        padding: 6px 15px;
+        border-left: 2px solid grey;
+        cursor: pointer;
+    }
+
+    .active {
+        color: azure;
+    }
+
+    .element:hover:not(.active) {
+        color: #3775bb;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar-container {
+            margin-right: 60px;
+            width: 0;
+        }
+        .hamburger {
+            display: block;
+        }
+
+        .sidebar {
+            transform: translateX(-100%);
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+        .sidebar__content {
+            margin-top: 50px;
+        }
+    }
+</style>
+<script>
+    const toggleButton = document.getElementById("menu-toggle");
+    const sidebar = document.querySelector(".sidebar");
+    const openIcon = document.getElementById("menu-icon-open");
+    const closeIcon = document.getElementById("menu-icon-close");
+
+    if (toggleButton && sidebar && openIcon && closeIcon) {
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            openIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        });
+    } else {
+        console.error(
+            "El botón de menú o los íconos no se encontraron en el DOM."
+        );
+    }
+</script>

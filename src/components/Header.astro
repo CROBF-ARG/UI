@@ -1,0 +1,43 @@
+---
+import Nav from "./Nav.astro";
+---
+
+<Nav />
+<section class="hero">
+    <div class="hero-body">
+        <h1 class="hero-title">Biblioteca de Componentes UI</h1>
+        <p class="hero-subtitle">
+            CROBF-UI es una biblioteca gratuita y de código abierto que
+            proporciona componentes Frond-End para listos para usar en tus
+            proyectos.
+        </p>
+        <div class="button">
+            <a href="/buttons"><button class="outlet">Empezar</button></a>
+        </div>
+    </div>
+</section>
+<style>
+    h1 {
+        text-wrap: balance;
+        line-height: 1;
+        text-align: center;
+    }
+    p {
+        text-align: center;
+        text-wrap: balance;
+        font-size: 1.3rem;
+        line-height: 1;
+    }
+    a {
+        text-align: center;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .button {
+        display: flex;
+        justify-content: center;
+    }
+</style>

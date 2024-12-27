@@ -5,19 +5,81 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Botones">
     <link
         rel="stylesheet"
-        href="https://crobf-arg.github.io/UI/src/components/buttons/button4.css"
+        href="https://crobf-arg.github.io/UI/dist/components/buttons.min.css"
     />
 
-    <h1>Botones</h1>
-    <p>Estos son los botones disponibles en tu biblioteca:</p>
-    <button class="btn">Botón Primario</button>
-    <button class="btn">Botón Secundario</button>
-    <pre>
-    <code>
-      {`
-        <button class="btn">Botón Primario</button>
-        <button class="btn">Botón Secundario</button>
-      `}
-    </code>
-  </pre>
+    <div class="container">
+        <h4>Botones</h4>
+        <p>Estos son los botones disponibles en tu biblioteca:</p>
+        <div class="buttons">
+            <button style="background-color: #333;">Botón</button>
+            <div class="code-container">
+                <code class="language-html">
+                    {`<button style="background-color: #333;">Botón</button>`}
+                </code>
+            </div>
+            <button class="large" style="background-color: #333;">Botón</button>
+            <div class="code-container">
+                <code class="language-html">
+                    {
+                        `<button class="large" style="background-color: #333;">Botón</button>`
+                    }
+                </code>
+            </div>
+            <button class="fill-up">Botón</button>
+            <div class="code-container">
+                <code class="language-html">
+                    {`<button class="fill-up">Botón</button>`}
+                </code>
+            </div>
+            <button class="fill-right">
+                <span class="content">Botón</span>
+            </button>
+            <div class="code-container">
+                <code class="language-html">
+                    {
+                        `<button class="fill-right"><span class="content">Botón</span></button>`
+                    }
+                </code>
+            </div>
+            <button style="background-color: #333;" class="move-up"
+                >Botón</button
+            >
+            <div class="code-container">
+                <code class="language-html">
+                    {
+                        `<button style="background-color: #333;" class="move-up">Botón</button>`
+                    }
+                </code>
+            </div>
+            <button style="background-color: #333;" class="shake">Botón</button>
+            <div class="code-container">
+                <code class="language-html">
+                    {
+                        `<button style="background-color: #333;" class="shake">Botón</button>`
+                    }
+                </code>
+            </div>
+            <button style="background-color: #333;" class="shadow">Botón</button
+            >
+            <div class="code-container">
+                <code class="language-html">
+                    {
+                        `<button style="background-color: #333;" class="shake">Botón</button>`
+                    }
+                </code>
+            </div>
+        </div>
+    </div>
+    <style>
+        .code-container {
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+        .code-container code {
+            padding: 10px;
+            display: block;
+            max-width: fit-content;
+        }
+    </style>
 </Layout>

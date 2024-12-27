@@ -1,25 +1,42 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import SideBar from "../components/SideBar.astro";
+import Title from "../components/Title.astro";
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/src/styles/base.css" />
-        <link rel="stylesheet" href="/src/styles/layout.css" />
-        <title>{Astro.props.title || "Documentación"}</title>
+        <BaseHead />
+        <title>{Astro.props.title || "UI - CROBF"}</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <nav class="navbar">
-            <div class="container">
-                <a href="/" class="navbar-brand">UI Library</a>
-                <ul class="navbar-menu">
-                    <li><a href="/buttons">Botones</a></li>
-                    <li><a href="/cards">Cards</a></li>
-                    <li><a href="/tables">Tablas</a></li>
-                </ul>
-            </div>
-        </nav>
+        <SideBar />
         <main>
+            <Title />
             <slot />
         </main>
-    </body>
+    </body><style>
+        body {
+            margin: 0;
+            background-color: #14161a;
+            color: white;
+            display: flex;
+        }
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+    ></script>
 </html>

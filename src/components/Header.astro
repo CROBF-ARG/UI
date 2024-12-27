@@ -2,7 +2,6 @@
 import Nav from "./Nav.astro";
 ---
 
-<Nav />
 <section class="hero">
     <div class="hero-body">
         <h1 class="hero-title">Biblioteca de Componentes UI</h1>
@@ -17,10 +16,26 @@ import Nav from "./Nav.astro";
     </div>
 </section>
 <style>
+    :root {
+        --accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--accent)),
+            rgb(var(--accent-light)) 30%,
+            white 60%
+        );
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+    }
     h1 {
         text-wrap: balance;
-        line-height: 1;
         text-align: center;
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 1rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     p {
         text-align: center;

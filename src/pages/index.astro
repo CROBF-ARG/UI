@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import BaseHead from "../components/BaseHead.astro";
+import ShowcaseCard from "../components/ShowcaseCard.astro";
 ---
 
 <html lang="es">
@@ -13,6 +14,28 @@ import BaseHead from "../components/BaseHead.astro";
     <body>
         <main>
             <Header />
+            <section class="components-grid">
+                <ShowcaseCard
+                    title="Buttons"
+                    description="Beautiful, responsive buttons with multiple variants and states"
+                    href="/docs/buttons"
+                />
+                <ShowcaseCard
+                    title="Forms"
+                    description="Form components with built-in validation and accessibility"
+                    href="/docs/forms"
+                />
+                <ShowcaseCard
+                    title="Tables"
+                    description="Clean and organized data tables with sorting and filtering"
+                    href="/docs/tables"
+                />
+                <ShowcaseCard
+                    title="Cards"
+                    description="Versatile card components for displaying content"
+                    href="/docs/cards"
+                />
+            </section>
         </main>
     </body><style>
         body {
@@ -23,6 +46,14 @@ import BaseHead from "../components/BaseHead.astro";
         }
         main {
             max-width: 1000px;
+        }
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
     </style>
 </html>

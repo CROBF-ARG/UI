@@ -1,0 +1,29 @@
+---
+const { language, code } = Astro.props;
+---
+
+<div class="code-container">
+    <div class="title">{language}</div>
+    <code class=`language-${language}`>
+        {code}
+    </code>
+</div>
+<hr />
+<style>
+    .title {
+        background-color: rgba(31, 41, 55, 0.623);
+        padding: 10px 30px;
+        border-radius: 10px 10px 0 0;
+        width: fit-content;
+        margin-bottom: 9px;
+    }
+    code.language-html {
+        background-color: rgba(31, 41, 55, 0.623) !important;
+        padding: 10px;
+        border-radius: 0px 10px 10px 10px;
+    }
+    hr {
+        width: 100%;
+        opacity: 0.1;
+    }
+</style>

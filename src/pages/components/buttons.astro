@@ -1,80 +1,35 @@
 ---
+import Code from "../../components/Code.astro";
+import Example from "../../components/Example.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout
-    title="Botones"
-    link="https://crobf-arg.github.io/UI/dist/components/buttons.min.css">
-    <link
-        rel="stylesheet"
-        href="https://crobf-arg.github.io/UI/dist/components/buttons.min.css"
-    />
+<Layout title="Botones" link="https://crobf-arg.github.io/UI/dist/components/buttons.min.css">
+    <link rel="stylesheet" href="https://crobf-arg.github.io/UI/dist/components/buttons.min.css" />
     <p>Estos son los botones disponibles en tu biblioteca:</p>
     <div class="buttons">
-        <button style="background-color: #333;">Botón</button>
-        <div class="code-container">
-            <code class="language-html">
-                {`<button style="background-color: #333;">Botón</button>`}
-            </code>
-        </div>
-        <button class="large" style="background-color: #333;">Botón</button>
-        <div class="code-container">
-            <code class="language-html">
-                {
-                    `<button class="large" style="background-color: #333;">Botón</button>`
-                }
-            </code>
-        </div>
-        <button class="fill-up">Botón</button>
-        <div class="code-container">
-            <code class="language-html">
-                {`<button class="fill-up">Botón</button>`}
-            </code>
-        </div>
-        <button class="fill-right">
+        <Example />
+        <Code language="html" code={`<button style="background-color: #333;">Botón</button>`} />
+        <Example className="large" />
+        <Code language="html" code={`<button class="large" style="background-color: #333;">Botón</button>`} />
+        <Example className="fill-up" color="transparent" />
+        <Code language="html" code={`<button class="fill-up">Botón</button>`} />
+        <Example className="fill-right">
             <span class="content">Botón</span>
-        </button>
-        <div class="code-container">
-            <code class="language-html">
-                {
-                    `<button class="fill-right"><span class="content">Botón</span></button>`
-                }
-            </code>
-        </div>
-        <button style="background-color: #333;" class="move-up">Botón</button>
-        <div class="code-container">
-            <code class="language-html">
-                {
-                    `<button style="background-color: #333;" class="move-up">Botón</button>`
-                }
-            </code>
-        </div>
-        <button style="background-color: #333;" class="shake">Botón</button>
-        <div class="code-container">
-            <code class="language-html">
-                {
-                    `<button style="background-color: #333;" class="shake">Botón</button>`
-                }
-            </code>
-        </div>
-        <button style="background-color: #333;" class="shadow">Botón</button>
-        <div class="code-container">
-            <code class="language-html">
-                {
-                    `<button style="background-color: #333;" class="shake">Botón</button>`
-                }
-            </code>
-        </div>
+        </Example>
+        <Code language="html" code={`<button class="fill-right"><span class="content">Botón</span></button>`} />
+        <Example style="background-color: #333;" className="move-up" />
+        <Code language="html" code={`<button style="background-color: #333;" class="move-up">Botón</button>`} />
+        <Example style="background-color: #333;" className="shake" />
+        <Code language="html" code={`<button style="background-color: #333;" class="shake">Botón</button>`} />
+        <Example style="background-color: #333;" className="shadow" />
+        <Code language="html" code={`<button style="background-color: #333;" class="shadow">Botón</button>`} />
     </div>
     <style>
-        .code-container {
-            margin-top: 10px;
-            margin-bottom: 50px;
-        }
-        .code-container code {
-            padding: 10px;
-            display: block;
-            max-width: fit-content;
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
     </style>
 </Layout>

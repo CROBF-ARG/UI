@@ -1,0 +1,15 @@
+---
+const { className, color } = Astro.props;
+---
+
+<div class="example">
+    <button style=`background-color: ${color};` class={Astro.props.className}>
+        <span class="content">Botón</span>
+    </button>
+</div>
+
+<style>
+    button {
+        background-color: #333;
+    }
+</style>

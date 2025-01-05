@@ -1,0 +1,1 @@
+h1.gradient,h2.gradient,h3.gradient,h4.gradient,h5.gradient,h6.gradient{line-height:1.1rem;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:rgba(0,0,0,0);background:linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%)}

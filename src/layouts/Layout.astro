@@ -3,7 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Instalacion from "../components/Instalacion.astro";
 import SideBar from "../components/SideBar.astro";
 import Title from "../components/Title.astro";
-const link = Astro.props;
+const { link } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +22,7 @@ const link = Astro.props;
         <SideBar />
         <main>
             <Title />
-            <Instalacion link=`${Astro.props.link}` />
+            <Instalacion link=`${link}` />
             <div class="container">
                 <h4>{Astro.props.title}</h4>
                 <slot />

@@ -1,5 +1,5 @@
 ---
-const link = Astro.props;
+const { link } = Astro.props;
 ---
 
 <section class="install-section">
@@ -13,7 +13,7 @@ const link = Astro.props;
                     {
                         `<link
                         rel="stylesheet"
-                        href="${Astro.props.link}"
+                        href="${link}"
                         />`
                     }
                 </code>

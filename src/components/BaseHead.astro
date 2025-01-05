@@ -1,19 +1,42 @@
 ---
+import { TITLE, DESCRIPTION, KEYWORDS } from "../config";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const faviconPath = "/logo-ui.png";
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<meta name="title" content="Library UI" />
-<meta name="description" content="" />
+<meta name="title" content={TITLE} />
+<meta name="description" content={DESCRIPTION} />
+<meta name="keywords" content={KEYWORDS.join(", ")} />
 
-<link rel="shortcut icon" href="/logo-ui.png" type="image/x-icon" />
+<!-- Open Graph Metadata -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={TITLE} />
+<meta property="og:description" content={DESCRIPTION} />
+<meta property="og:image" content="/og-image.png" />
+<!-- Añade un archivo específico -->
 
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={TITLE} />
+<meta name="twitter:description" content={DESCRIPTION} />
+<meta name="twitter:image" content="/twitter-image.png" />
+<!-- Imagen para Twitter -->
+
+<!-- Favicon -->
+<link rel="icon" href={faviconPath} sizes="any" type="image/png" />
+<link rel="apple-touch-icon" href={faviconPath} />
+<link rel="shortcut icon" href={faviconPath} type="image/x-icon" />
+
+<!-- External Stylesheet -->
 <link rel="stylesheet" href="https://crobf-arg.github.io/UI/dist/milig.min.css" />
